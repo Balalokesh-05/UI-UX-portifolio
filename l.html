@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lutukurthi Bala Lokesh - Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+    
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #fdfbf7;
+            color: #333;
+        }
+        .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 800px;
+            margin: auto;
+            height: 400px;
+        }
+        .nav-link {
+            transition: color 0.3s;
+        }
+        .nav-link:hover {
+            color: #3b82f6;
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <header class="bg-white/80 backdrop-blur-md sticky top-0 z-50 shadow-sm">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <div class="text-2xl font-bold text-gray-800">LBL</div>
+            <div class="hidden md:flex space-x-8">
+                <a href="#skills" class="nav-link text-gray-600">Skills</a>
+                <a href="#projects" class="nav-link text-gray-600">Projects</a>
+                <a href="#education" class="nav-link text-gray-600">Education</a>
+                <a href="#contact" class="nav-link text-gray-600">Contact</a>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container mx-auto px-6 py-12">
+        <section id="hero" class="text-center py-20">
+            <h1 class="text-5xl md:text-7xl font-bold text-gray-800 mb-4">Lutukurthi Bala Lokesh</h1>
+            <p class="text-xl md:text-2xl text-gray-600 mb-8">Aspiring UX Designer & Developer</p>
+            <div id="objective" class="max-w-3xl mx-auto text-lg text-gray-500">
+                Highly motivated and analytical individual eager to begin a career in UX design. I am seeking an Associate – UX Designer position to leverage my strong problem-solving and critical thinking skills. I am a fast learner, committed to applying my technical background and passion for user-centered design to a challenging and collaborative environment.
+            </div>
+        </section>
+
+        <section id="skills" class="py-20">
+            <h2 class="text-4xl font-bold text-center mb-12">My Skillset</h2>
+             <div class="intro-text max-w-3xl mx-auto text-center text-gray-600 mb-12">
+                This section provides a visual overview of my technical and transferable skills. The chart below illustrates my proficiency in various areas, from programming languages to design software. This interactive visualization is designed to give you a quick and clear understanding of my capabilities and how they align with the needs of a modern product team.
+            </div>
+            <div class="chart-container">
+                <canvas id="skillsChart"></canvas>
+            </div>
+        </section>
+
+        <section id="projects" class="py-20 bg-white rounded-xl shadow-md">
+            <h2 class="text-4xl font-bold text-center mb-12">Projects & Activities</h2>
+             <div class="intro-text max-w-3xl mx-auto text-center text-gray-600 mb-12">
+                Here you can explore some of the projects I've worked on. Each card represents a unique challenge and solution, showcasing my ability to apply my skills in practical scenarios. Click on a project to learn more about the process, the tools I used, and the outcomes. This section is designed to provide tangible evidence of my problem-solving abilities and my passion for creating functional and user-friendly applications.
+            </div>
+            <div id="projects-grid" class="grid md:grid-cols-2 gap-8">
+            </div>
+        </section>
+
+        <section id="education" class="py-20">
+            <h2 class="text-4xl font-bold text-center mb-12">Education</h2>
+            <div class="intro-text max-w-3xl mx-auto text-center text-gray-600 mb-12">
+                My academic background has provided me with a strong foundation in computer science and analytical thinking. This timeline highlights my educational journey, from my diploma to my ongoing master's degree. Each step has equipped me with valuable knowledge and skills that I am eager to apply in a professional setting.
+            </div>
+            <div id="education-timeline" class="relative border-l-2 border-blue-200 ml-6">
+            </div>
+        </section>
+    </main>
+
+    <footer id="contact" class="bg-gray-800 text-white py-12">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-3xl font-bold mb-4">Get In Touch</h2>
+            <p class="mb-8">I'm currently seeking new opportunities. Feel free to reach out!</p>
+            <div class="flex justify-center items-center space-x-6 text-lg">
+                <p>balalokeshlutukurthi@gmail.com</p>
+                <span>&bull;</span>
+                <p>9949081925</p>
+            </div>
+            <div class="flex justify-center space-x-6 mt-8">
+                <a href="https://linkedin.com/in/lokesh-lutukkurthi-979141338" target="_blank" class="hover:text-blue-400 transition">LinkedIn</a>
+                <a href="https://github.com/Balalokesh-05" target="_blank" class="hover:text-blue-400 transition">GitHub</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const resumeData = {
+            skills: {
+                labels: ['Analytical Thinking', 'Problem-Solving', 'Time Management', 'C', 'Python', 'HTML', 'CSS', 'MySQL', 'Figma', 'Adobe XD'],
+                values: [90, 95, 85, 75, 80, 90, 85, 70, 60, 55]
+            },
+            projects: [
+                {
+                    title: 'To-Do List Application',
+                    role: 'Developer and Designer',
+                    description: 'Designed and developed a simple, functional to-do list application. Focused on creating an intuitive user interface (UI) to help users easily add, manage, and complete tasks. The project demonstrates my ability to take a user problem and build a simple, effective solution.',
+                    tools: 'HTML, CSS, JavaScript'
+                },
+                {
+                    title: 'DVWA Pentesting Practice',
+                    role: 'Security Tester',
+                    description: 'Used the Damn Vulnerable Web Application to understand, identify, and address web application vulnerabilities. This project honed my analytical skills in troubleshooting and solving complex security problems, which is directly applicable to the analytical mindset required in UX design.',
+                    tools: 'Kali Linux, Burp Suite, Python'
+                }
+            ],
+            education: [
+                {
+                    degree: 'Master of Computer Applications',
+                    institution: 'Aditya College of Engineering and Technology',
+                    years: '2024 - Present'
+                },
+                {
+                    degree: 'Bachelor of Computer Applications',
+                    institution: 'Glocal University',
+                    years: '2021 - 2024'
+                },
+                {
+                    degree: 'Diploma in Agriculture',
+                    institution: 'Agricultural Polytechnic, Acharya N. G. Ranga Agricultural University',
+                    years: '2020'
+                }
+            ]
+        };
+
+        const skillsChartCtx = document.getElementById('skillsChart').getContext('2d');
+        new Chart(skillsChartCtx, {
+            type: 'bar',
+            data: {
+                labels: resumeData.skills.labels,
+                datasets: [{
+                    label: 'Proficiency',
+                    data: resumeData.skills.values,
+                    backgroundColor: 'rgba(59, 130, 246, 0.5)',
+                    borderColor: 'rgba(59, 130, 246, 1)',
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                indexAxis: 'y',
+                responsive: true,
+                maintainAspectRatio: false,
+                scales: {
+                    x: {
+                        beginAtZero: true,
+                        max: 100
+                    }
+                },
+                plugins: {
+                    legend: {
+                        display: false
+                    }
+                }
+            }
+        });
+
+        const projectsGrid = document.getElementById('projects-grid');
+        resumeData.projects.forEach(project => {
+            const projectCard = document.createElement('div');
+            projectCard.className = 'bg-gray-50 p-6 rounded-lg shadow-sm';
+            projectCard.innerHTML = `
+                <h3 class="text-2xl font-bold mb-2">${project.title}</h3>
+                <p class="text-md text-blue-500 font-semibold mb-4">${project.role}</p>
+                <p class="text-gray-600 mb-4">${project.description}</p>
+                <p class="text-sm text-gray-500"><strong>Tools:</strong> ${project.tools}</p>
+            `;
+            projectsGrid.appendChild(projectCard);
+        });
+
+        const educationTimeline = document.getElementById('education-timeline');
+        resumeData.education.forEach(edu => {
+            const timelineItem = document.createElement('div');
+            timelineItem.className = 'mb-8 ml-8';
+            timelineItem.innerHTML = `
+                <div class="absolute w-4 h-4 bg-blue-500 rounded-full -left-[9px] mt-1.5 border-2 border-white"></div>
+                <h3 class="text-xl font-semibold">${edu.degree}</h3>
+                <p class="text-blue-600">${edu.institution}</p>
+                <time class="text-sm text-gray-500">${edu.years}</time>
+            `;
+            educationTimeline.appendChild(timelineItem);
+        });
+    </script>
+</body>
+</html>
